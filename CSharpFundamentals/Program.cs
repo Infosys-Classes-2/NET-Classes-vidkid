@@ -10,8 +10,9 @@
 // Console.WriteLine($"Hello, {firstname}");
 
 // class 1
- string name;
+ 
  Console.WriteLine("enter your name");
- Console.ReadLine();
+ string name =  Console.ReadLine();
+
  Console.WriteLine(name.ToUpper());
  
