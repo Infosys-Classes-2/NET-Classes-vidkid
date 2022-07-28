@@ -11,8 +11,17 @@
 
 // class 1
  
- Console.WriteLine("enter your name");
- string name =  Console.ReadLine();
+//  Console.WriteLine("enter your name");
+//  string name =  Console.ReadLine();
 
- Console.WriteLine(name.ToUpper());
+//  Console.WriteLine(name.ToUpper());
  
+
+
+//  class 2
+
+// Console.WriteLine("enter meter value: ");
+// var length = Console.ReadLine();
+// var lengthnumber = double.Parse(length);
+// var feets = lengthnumber * 3.288;
+// Console.WriteLine($"{lengthnumber} is {feets}");
