@@ -10,12 +10,12 @@
 // Console.WriteLine($"Hello, {firstname}");
 
 // class work 1
- 
+
 //  Console.WriteLine("enter your name");
 //  string name =  Console.ReadLine();
 
 //  Console.WriteLine(name.ToUpper());
- 
+
 
 
 //  class work 2
@@ -41,10 +41,17 @@
 
 // class work 4
 
-Console.WriteLine("Enter days: ");
-var d = Console.ReadLine();
-var days = Convert.ToInt32(d);
-var year = days/365;
-var month = days/12;
-var week = days/7;
-Console.WriteLine($"The year is {year}, month is {month}, week is {week} and days is {days}");
+
+  int years, months, weeks, days, num;
+  Console.Write("Enter number of days: ");
+  num = Convert.ToInt32(Console.ReadLine());
+  years = num / 365;
+  months = (num%365)/30;
+  weeks = ((num % 365)%30) / 7;
+  days  = ((num % 365)%30)% 7;
+  Console.WriteLine("Years : " + years);
+  Console.WriteLine("Months :" + months);
+  Console.WriteLine("Weeks : " + weeks);
+  Console.WriteLine("Days  : " + days ); 
+
+
