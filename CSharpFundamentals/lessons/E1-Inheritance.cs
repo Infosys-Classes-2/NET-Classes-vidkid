@@ -1,56 +1,64 @@
 // using System;
-// public class LivingThings
+
+// public class LivingThing
 // {
 //     public string food;
 //     public string scientificName;
 
-//     public void eat()
+//     public void Eat()
 //     {
 //         Console.WriteLine($"I am eating {food}");
-
 //     }
 // }
-// public class Plant : LivingThings
+
+// public class Plant : LivingThing
 // {
 //     public bool flowering;
 //     public int leafCount;
 
-//     public void PrintFlowerDetail()
-// {
-//     var x = flowering ? "flowering" : "non-flowering";
-//     Console.WriteLine($"I am {x} plant.");
+//     public void PrintPlantDetail()
+//     {
+//         var x = flowering ? "flowering" : "non-flowering";
+//         Console.WriteLine($"I am {x} plant.");
+//     }
+// }
 
-// }
-// }
-// public class Animal: LivingThings
+// public class Animal : LivingThing
 // {
 //     public byte noOfLegs;
-
-//     public AnimalType type;
+//     public AnimalCategory type;
 
 //     public void PrintAnimalDetail()
 //     {
-//         var x = type ==AnimalType.Vertibrates ? "bones" : " no bones";
-//         Console.WriteLine($"I Have {x}");
+//         var x = type == AnimalCategory.Vertibrates ? "bones" : "no bones";
+//         Console.WriteLine("I have {x}");
 //     }
 // }
+
 // public class Human : Animal
 // {
 
 // }
-// public class Yarshagumba : Plant, IAnimal
-// {
-//    public void PrintAnimalDetail()
-//    {
 
-//    }
+// public class YarsaGumba : Plant, IAnimal
+// {
+//     public void PrintAnimalDetail()
+//     {
+
+//     }
 // }
+
 // public interface IAnimal
 // {
 //     public void PrintAnimalDetail();
 // }
-// public enum AnimalType
+
+// public enum AnimalCategory
 // {
 //     Vertibrates,
 //     Invertibrates
 // }
+
+// // L, P <- L, A <- L - Single inheritance
+// // L, A <- L, H <- A - Multi-level inheritance
+// // A, IA, Y <- A, IA - Multiple inheritance

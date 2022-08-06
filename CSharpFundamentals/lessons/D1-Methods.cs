@@ -1,8 +1,8 @@
-using System;
-using System.Linq;
+// using System;
+// using System.Linq;
 
-public class MethodsLearning
-{
+// public class MethodsLearning
+// {
     // Returns Nothing , Takes no arguments
     //     void PrintHello()
     //     {
@@ -29,15 +29,15 @@ public class MethodsLearning
 
     //     }
 
-    //  public string GetInitials(string fullname)
-    //  {
-    //      var nameParts = fullname.Split(" ");
-    //      var len = nameParts.Length;
-    //      var first = nameParts[0][0];
-    //      var last = nameParts[len - 1][0];
-    //      var initials = ($"{first} {last}");
-    //      return initials;
-    //  }
+    //   public string GetInitials(string fullname)
+    //   {
+    //       var nameParts = fullname.Split(" ");
+    //       var len = nameParts.Length;
+    //       var first = nameParts[0][0];
+    //       var last = nameParts[len - 1][0];
+    //       var initials = ($"{first} {last}");
+    //       return initials;
+    //   }
 
     //     //Return Multiple values, take no/ some Arguments\
 
@@ -125,4 +125,4 @@ public class MethodsLearning
     //     //Expression bodied members, inline methods
     //     //=> lyamda operator/ goesto /arrow operator
     //     public float Divide(float x, float y) => x/y;
-}
+// }
