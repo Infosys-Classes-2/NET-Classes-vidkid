@@ -26,9 +26,7 @@
 // var feets = lengthnumber * 3.288;
 // Console.WriteLine($"{lengthnumber} is {feets}");
 
-
-
-// //class work 3
+// no.1 Solution
 
 // Console.WriteLine("Enter the Radius: ");
 // var r = Console.ReadLine();
@@ -38,20 +36,27 @@
 // Console.WriteLine($"The area of circle is: {area}");
 
 
+//No.2 Solution
 
-// class work 4
+// int years, months, weeks, days, num;
+// Console.Write("Enter number of days: ");
+// num = Convert.ToInt32(Console.ReadLine());
+// years = num / 365;
+// months = (num%365)/30;
+// weeks = ((num % 365)%30) / 7;
+// days  = ((num % 365)%30)% 7;
+// Console.WriteLine("Years : " + years);
+// Console.WriteLine("Months :" + months);
+// Console.WriteLine("Weeks : " + weeks);
+// Console.WriteLine("Days  : " + days ); 
 
 
-  int years, months, weeks, days, num;
-  Console.Write("Enter number of days: ");
-  num = Convert.ToInt32(Console.ReadLine());
-  years = num / 365;
-  months = (num%365)/30;
-  weeks = ((num % 365)%30) / 7;
-  days  = ((num % 365)%30)% 7;
-  Console.WriteLine("Years : " + years);
-  Console.WriteLine("Months :" + months);
-  Console.WriteLine("Weeks : " + weeks);
-  Console.WriteLine("Days  : " + days ); 
+
+
+
+
+
+
+
 
 
