@@ -45,12 +45,19 @@
 // Solution pat = new Solution();
 // pat.Pyramid();
 
-//  Hajuraama child1 = new Hajuraama();
-//  child1.RameshDad();
-//  Hajurbau child2 = new Hajurbau();
-//  child2.RupaMom();
+   Dad kera = new();
+   Mom lol = new();
+   kera.RupaMom();
+   lol.RameshDad();
 
-LinQ l = new();
-l.LearnLINQ();
+// LINQ V = new();
+// V.LearnLINQ();
+
+// Car BMW = new();
+// BMW.Start();
+
+Test1 lamo = new();
+lamo.Do();
+
       }
   }

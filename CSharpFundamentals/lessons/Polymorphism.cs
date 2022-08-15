@@ -21,16 +21,17 @@ public class Car: Vehicle
 {
     public override void Start()
     {
-        base.Start();
+        
         Console.WriteLine("It's a car.");
     }
 }
 
 class Test1
 {
-    void Do()
+    public void Do()
     {
         Car c1 = new();
+        
         c1.Start();
         c1.Start(34.5f);
     }
