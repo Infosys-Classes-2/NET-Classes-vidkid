@@ -1,8 +1,8 @@
-  // using System;
-  // class Test
-  // {
-  //     public static void Main(string[] args)
-  //     {
+   using System;
+   class Test
+   {
+       public static void Main(string[] args)
+       {
 // //         /*  Animal cow =new();
 // //          Animal goat=new();
 // //          Animal buffalo =new();
@@ -45,10 +45,12 @@
 // Solution pat = new Solution();
 // pat.Pyramid();
 
-// Hajuraama child1 = new Hajuraama();
-// child1.RameshDad();
-// Hajurbau child2 = new Hajurbau();
-// child2.RupaMom();
+//  Hajuraama child1 = new Hajuraama();
+//  child1.RameshDad();
+//  Hajurbau child2 = new Hajurbau();
+//  child2.RupaMom();
 
-//      }
-//  }
+LinQ l = new();
+l.LearnLINQ();
+      }
+  }
