@@ -45,19 +45,33 @@
 // Solution pat = new Solution();
 // pat.Pyramid();
 
-   Dad kera = new();
-   Mom lol = new();
-   kera.RupaMom();
-   lol.RameshDad();
+   // Dad kera = new();
+   // Mom lol = new();
+   // kera.RupaMom();
+   // lol.RameshDad();
 
-// LINQ V = new();
-// V.LearnLINQ();
+//  LINQ V = new();
+//  V.LearnLINQ();
 
 // Car BMW = new();
 // BMW.Start();
 
-Test1 lamo = new();
-lamo.Do();
+// Test1 lamo = new();
+// lamo.Do();
+
+// LearnParallel lp = new();
+// lp.Do();
+
+// FileIO file = new();
+// file.Do();
+
+ Folder blast = new();
+ blast.Boom();
+
+// Assignment5 sol = new();
+
+// sol.ListFileFolders();
+
 
       }
   }
