@@ -18,4 +18,9 @@ public class HomeController : Controller
     {
         return "Hello there!!!";
     }
+    
+    public IActionResult Carousel()
+    {
+        return View();
+    }
 }
