@@ -1,0 +1,41 @@
+﻿@{
+
+
+	int[] num = new int[10];
+
+num[0] = 3;
+num[1] = 4;
+num[2] = 5;
+num[3] = 6;
+num[4] = 7;
+num[5] = 8;
+num[6] = 23;
+num[7] = 15;
+num[8] = 24;
+num[9] = 28;
+}
+<h1>All Numbers :</h1>
+@foreach (int numbers in num)
+{
+	<h2>@numbers</h2>
+}
+
+ <h1> Multiples of 3:
+        @foreach (int numbers in num)
+        {
+            if(@numbers%3 == 0)
+            {
+              <h3>@numbers</h3>
+            }
+        }</h1>
+
+        <h1> Multiples of 4:
+        @foreach (int numbers in num)
+        {
+            if(@numbers%4 == 0)
+            {
+              <h4>@numbers</h4>
+            }
+        }</h1>
+
+
