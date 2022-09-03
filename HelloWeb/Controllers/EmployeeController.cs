@@ -1,33 +1,89 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HelloWeb.Models;
+using HelloWeb.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HelloWeb.Controllers;
 
 public class EmployeeController : Controller
 {
-    public IActionResult List()
-    {
-        Employee employee1 = new()
-        {
-            FirstName = "Ram",
-            LastName = "Basnet",
-            Designation = "Software Engineer",
-            Level = 7,
-            Department = "RE9s",
-            JoinDate = DateTime.Now
-        };
+    //Tightly Coupled Code
+    private readonly EmployeeContext db;
 
-        Employee employee2 = new()
-        {
-            FirstName = "vidkid",
-            LastName = "hehe",
-            Designation = "senior Software Engineer",
-            Level = 7,
-            Department = "JD56",
-            JoinDate = DateTime.Now
-        };
-        List<Employee> employees = new() { employee1, employee2 };
+    //Dependency Injecion (DI)
+    public EmployeeController(EmployeeContext _db)
+    {
+        db = _db;
+    }
+
+
+    [HttpGet]
+    public async Task<IActionResult> List()
+    {
+
+        var employees = await db.Employees.Include(x => x.Department).ToListAsync();
+
+        //var queryEmployees = from employee in db.Employees
+        //                     join dept in db.Departments on employee.DepartmentId equals dept.Id
+        //                     select new
+        //                     {
+        //                         Name = employee.FirstName,
+        //                         Department = dept.Name
+        //                     };
 
         return View(employees);
     }
+    [HttpGet]
+    public async Task<IActionResult> Add()
+    {
+        var departments = await db.Departments.ToListAsync();
+        ViewData["Departments"] = departments.Select(x => new SelectListItem() 
+        { Text = x.Name, Value = x.Id.ToString()
+        });
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Add(Employee emp)
+    {
+        //adding to the Employee list
+       await db.Employees.AddAsync(emp);
+       await db.SaveChangesAsync();
+
+        //submit vaye paxi list ma redirect gareko
+        return RedirectToAction(nameof(List)); //"List"
+    }
+    public async Task<IActionResult> Edit(int id)
+    {
+        var employee = await db.Employees.FindAsync(id);
+        return View(employee);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Edit(Employee emp)
+    {
+        //Update to the Employee list
+        db.Employees.Update(emp);
+        await db.SaveChangesAsync();
+
+        //submit vaye paxi list ma redirect gareko
+        return RedirectToAction(nameof(List)); //"List"
+    }
+    public async Task<IActionResult> Delete(int id)
+    {
+        var employee = await db.Employees.FindAsync(id);
+        return View(employee);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Delete(Employee emp)
+    {
+        //Update to the Employee list
+        db.Employees.Remove(emp);
+        await db.SaveChangesAsync();
+
+        //submit vaye paxi list ma redirect gareko
+        return RedirectToAction(nameof(List)); //"List"
+    }
+
+
 }

@@ -1,7 +1,11 @@
 ﻿@model List<Employee>
 
-<h4>All employees</h4>
+@{
+    ViewData["Title"] = "Employee List";
+}
 
+
+<a asp-controller="Employee" asp-action="Add" class="btn btn-primary mt-2">Add Employee</a>
 <table class="table">
     <tr>
         <th>First Name</th>
@@ -19,12 +23,11 @@
             <td>@employee.LastName</td>
             <td>@employee.Designation</td>
             <td>@employee.Level</td>    
-            <td>@employee.Department</td>
+            <td>@employee.Department.Name</td>
             <td>@employee.JoinDate</td>
             <td>
-                <button type="button" class="btn btn-primary">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-
+                <a asp-controller="Employee" asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-primary">Edit</a>
+                <a asp-controller="Employee" asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-danger">Delete</a>
 
             </td>
         </tr>
