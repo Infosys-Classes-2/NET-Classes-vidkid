@@ -23,6 +23,9 @@ public class EmployeeController : Controller
     {
 
         var employees = await db.Employees.Include(x => x.Department).ToListAsync();
+        var employees1 = await db.Employees.Include(x => x.Designation).ToListAsync();
+
+        
 
         //var queryEmployees = from employee in db.Employees
         //                     join dept in db.Departments on employee.DepartmentId equals dept.Id
@@ -41,8 +44,18 @@ public class EmployeeController : Controller
         ViewData["Departments"] = departments.Select(x => new SelectListItem() 
         { Text = x.Name, Value = x.Id.ToString()
         });
+
+
+        var designations = await db.Designations.ToListAsync();
+        ViewData["Designations"] = designations.Select(x => new SelectListItem()
+        {
+            Text = x.Name, Value = x.Id.ToString()
+        });
         return View();
+
     }
+
+   
 
     [HttpPost]
     public async Task<IActionResult> Add(Employee emp)
