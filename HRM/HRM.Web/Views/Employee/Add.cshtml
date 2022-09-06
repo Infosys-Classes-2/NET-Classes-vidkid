@@ -1,0 +1,52 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Add Employee";
+
+}
+
+
+<div class="card mt-2 p-4">
+<form method="post" enctype="multipart/form-data">
+     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+    <label asp-for="FirstName" class="form-label"></label>
+    <input asp-for="FirstName" class="form-control"/>
+     <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+        <div class="mb-3">
+            <label asp-for="LastName" class="form-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Designation" class="form-label"></label>
+            <select asp-for="DesignationId" asp-items="@ViewData["Designations"] as IEnumerable <SelectListItem>" class="form-select" >
+                <span asp-validation-for="DesignationId" class="text-danger"></span>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Level" class="form-label"></label>
+            <input asp-for="Level" class="form-control" />
+            <span asp-validation-for="Level" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Department" class="form-label"></label>
+            <select asp-for="DepartmentId" asp-items="@ViewData["Departments"] as IEnumerable <SelectListItem>" class="form-select" >
+                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="JoinDate" class="form-label"></label>
+            <input asp-for="JoinDate" class="form-control" />
+            <span asp-validation-for="JoinDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+           <label asp-for="Avatar" class="form-label">Profile image</label>
+           <input class="form-control" asp-for="Avatar" />
+        </div>
+        <button type="submit" class="btn btn-success">Save Employee</button>
+</form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
