@@ -7,10 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EmployeeContext>();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 options.SignIn.RequireConfirmedAccount = false)
 .AddEntityFrameworkStores<EmployeeContext>();
 
+builder.Services.AddRazorPages();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
