@@ -58,5 +58,9 @@ namespace HRM.Web.Controllers
 
             return RedirectToAction(nameof(AssignRole));
         }
+        public IActionResult UserRoles()
+        {
+            return View();
+        }
     }
 }

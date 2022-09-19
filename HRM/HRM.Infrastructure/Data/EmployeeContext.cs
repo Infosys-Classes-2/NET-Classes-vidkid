@@ -8,10 +8,8 @@ namespace HRM.Web.Data
 {
     public class EmployeeContext: IdentityDbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public EmployeeContext(DbContextOptions<EmployeeContext> dbContextOptions): base(dbContextOptions)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=HrmDb;"
-            + "Integrated Security=true");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
